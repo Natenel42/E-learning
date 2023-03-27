@@ -1,0 +1,85 @@
+<app-admin-header></app-admin-header>
+
+<div class="container">
+    <div class="row">
+        <div class="form-outline mb-4 col-4 mt-2">
+            <label class="form-label" for="form2Example1">Week Start Date</label>
+            <input type="date" id="form2Example1" class="form-control" name="weekStartDate"
+                [(ngModel)]="weekStartDate" />
+        </div>
+
+        <div class="form-outline mb-4 col-4">
+            <label class="form-label mt-2" for="form2Example1">Department</label>
+            <select [(ngModel)]="department" class="form-select">
+                <option selected>Select Department</option>
+                <option [value]="dept.name" *ngFor="let dept of appService.Departments">{{dept.name}}</option>
+            </select>
+        </div>
+
+        <div class="col-4">
+            <button class="btn btn-primary" (click)="postSchedule()" color="primary"
+                style="float: left;margin-top: 40px;" [disabled]="busy">Post Schedule</button>
+        </div>
+
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Mon</th>
+                <th scope="col">Tue</th>
+                <th scope="col">Wed</th>
+                <th scope="col">Thu</th>
+                <th scope="col">Fri</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Morning</th>
+                <td>
+                    <textarea [(ngModel)]="schedule.monMor" class="schedule" name="message" class="form-control"
+                        rows="8" cols="1"></textarea>
+                </td>
+                <td>
+                    <textarea [(ngModel)]="schedule.tueMor" class="schedule" name="message" class="form-control"
+                        rows="8" cols="1"></textarea>
+                </td>
+                <td>
+                    <textarea [(ngModel)]="schedule.wedMor" class="schedule" name="message" class="form-control"
+                        rows="8" cols="1"></textarea>
+                </td>
+                <td>
+                    <textarea [(ngModel)]="schedule.thuMor" class="schedule" name="message" class="form-control"
+                        rows="8" cols="1"></textarea>
+                </td>
+                <td>
+                    <textarea [(ngModel)]="schedule.friMor" class="schedule" name="message" class="form-control"
+                        rows="8" cols="1"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Afternoon</th>
+                <td>
+                    <textarea [(ngModel)]="schedule.monAf" class="schedule" name="message" class="form-control" rows="8"
+                        cols="1"></textarea>
+                </td>
+                <td>
+                    <textarea [(ngModel)]="schedule.tueAf" class="schedule" name="message" class="form-control" rows="8"
+                        cols="1"></textarea>
+                </td>
+                <td>
+                    <textarea [(ngModel)]="schedule.wedAf" class="schedule" name="message" class="form-control" rows="8"
+                        cols="1"></textarea>
+                </td>
+                <td>
+                    <textarea [(ngModel)]="schedule.thuAf" class="schedule" name="message" class="form-control" rows="8"
+                        cols="1"></textarea>
+                </td>
+                <td>
+                    <textarea [(ngModel)]="schedule.friAf" class="schedule" name="message" class="form-control" rows="8"
+                        cols="1"></textarea>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

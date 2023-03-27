@@ -1,0 +1,27 @@
+<app-admin-header></app-admin-header>
+
+<div class="container mt-3">
+    
+    <a class="btn btn-primary mb-3" href="/admin/register-lecturer">Register Lecturer</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Email</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Department</th>
+                <th scope="col">Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let lecturer of allLecturers; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{lecturer.emailAddress}} </td>
+                <td>{{lecturer.firstName}} {{lecturer.middleName}} {{lecturer.lastName}}</td>
+                <td>{{lecturer.department}}</td>
+                <td>{{lecturer.course}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

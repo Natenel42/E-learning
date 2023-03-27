@@ -1,0 +1,35 @@
+<app-admin-header></app-admin-header>
+
+<div class="container mt-5">
+    <form>
+        <h1 style="margin-bottom: 1rem;">Post Announcement</h1>
+
+        <div class="row">
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Add Message to Announce</label>
+                <textarea [(ngModel)]="message" name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <div class="form-outline mb-4 col-4 mt-2">
+                <label class="form-label" for="form2Example1">Addressed From</label>
+                <input type="text" id="form2Example1" placeholder="Ex. Registrar" class="form-control" name="addressedFrom"
+                    [(ngModel)]="addressedFrom" />
+            </div>
+    
+            <div class="form-outline mb-4 col-4 mt-2">
+                <label class="form-label" for="form2Example1">Addressed To</label>
+                <input type="text" id="form2Example1" placeholder="Ex. Regular Students" class="form-control" name="addressedTo"
+                    [(ngModel)]="addressedTo" />
+            </div>
+    
+            <div class="form-outline mb-4 col-4 mt-2">
+                <label class="form-label" for="form2Example1">Announce Until</label>
+                <input type="date" id="form2Example1" class="form-control" name="announceUntil"
+                    [(ngModel)]="announceUntil" />
+            </div>
+        </div>
+
+        <button class="btn btn-primary" (click)="postAnnouncement()" color="primary"
+            style="float: right;margin-top: 30px;" [disabled]="busy">Post Announcement</button>
+    </form>
+</div>

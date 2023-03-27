@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    //font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.full-width {
+    width: 100%;
+}
+
+button:focus {
+    outline: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+td,
+th,
+a,
+label,
+button,
+div {
+    font-family: "Nunito" !important; /*, "Helvetica Neue", "sans-serif"*/
+}
+
+.dashPane {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 15px 15px 20px 15px;
+
+    min-height: 300px;
+    height: auto;
+    max-height: 370px;
+    overflow-y: auto;
+}
+
+.loc_overview {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: white;
+    margin-top: 10px;
+    height: 5rem;
+}
+/*
+.followingTitle {
+    max-width: 12rem;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+
+.loadingOverview .mat-progress-bar-fill::after {
+    background-color: lightgray !important;
+    background: white !important;
+}
