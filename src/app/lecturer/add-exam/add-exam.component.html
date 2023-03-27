@@ -1,0 +1,58 @@
+<app-lecturer-header></app-lecturer-header>
+
+<div class="container mt-5">
+    <form>
+        <h1 style="margin-bottom: 1rem;">Post Quiz/Exam</h1>
+
+        <div class="row">
+            <div class="mb-3 col-6">
+                <label for="exampleFormControlTextarea1" class="form-label">Exam Name</label>
+                <input [(ngModel)]="examName" name="examName" class="form-control" id="exampleFormControlTextarea1" />
+            </div>
+
+            <div class="mb-3 col-6">
+                <label for="exampleFormControlTextarea1" class="form-label">Num of Questions</label>
+                <input [(ngModel)]="numQs" (ngModelChange)="numQsChanged()" type="number" name="numQs" class="form-control" id="exampleFormControlTextarea1" />
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Question</th>
+                    <th scope="col">A</th>
+                    <th scope="col">B</th>
+                    <th scope="col">C</th>
+                    <th scope="col">D</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let quest of exam?.questions; let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>
+                        <textarea style="width: 400px;" [(ngModel)]="exam.questions[i].question" (ngModelChange)="updateQuestion(i, 'question', $event)" class="schedule"
+                            name="question" class="form-control" rows="5" cols="7"></textarea>
+                    </td>
+                    <td>
+                        <input [(ngModel)]="exam.questions[i].A" class="schedule" name="A" (ngModelChange)="updateQuestion(i, 'A', $event)" class="form-control" />
+                    </td>
+                    <td>
+                        <input [(ngModel)]="exam.questions[i].B" class="schedule" name="B" (ngModelChange)="updateQuestion(i, 'B', $event)" class="form-control" />
+                    </td>
+                    <td>
+                        <input [(ngModel)]="exam.questions[i].C" class="schedule" name="C" (ngModelChange)="updateQuestion(i, 'C', $event)" class="form-control" />
+                    </td>
+                    <td>
+                        <input [(ngModel)]="exam.questions[i].D" class="schedule" name="D" (ngModelChange)="updateQuestion(i, 'D', $event)" class="form-control" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="float: right;margin-top: 30px;">
+            <button class="btn btn-primary" style="margin-bottom: 50px;" (click)="postExam()" color="primary" [disabled]="busy">Post Exam</button>
+        </div>
+
+    </form>
+</div>

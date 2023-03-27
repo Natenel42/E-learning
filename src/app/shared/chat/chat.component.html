@@ -1,0 +1,21 @@
+<div *ngIf="!collapsed"
+    style="position: fixed; bottom: 0px; right: 0px; width: 300px; padding-top: 10px; height: 350px; border: 1px solid rgb(99, 92, 92); background-color: rgb(234, 233, 233);">
+    <div style="overflow-y: scroll; height: 300px;">
+        <div *ngFor="let chat of groupChat"
+            style="background-color: white; margin: 2px 10px; border-radius: 10px; padding: 3px 3px 0px 10px;">
+            <label style="font-size: x-small; font-weight: 600;">{{chat.from}}</label>
+            <p>{{chat.message}}</p>
+        </div>
+    </div>
+
+    <div (click)="collapsed = true" style="cursor: pointer; position: fixed; bottom: 335px; right: 280px; background: white; border-radius: 30px; width: 30px; height: 30px; padding-left: 10px; padding-top: 4px;">X</div>
+
+    <input [(ngModel)]="newMessage" name="newMessage" style="position: fixed; bottom: 10px; right: 80px; width: 210px;"
+        type="text" />
+    <button class="btn btn-primary" (click)="sendMessage()" color="primary"
+        style="position: fixed; bottom: 10px; right:8px; height: 30px; padding-top: 2px;">Send</button>
+</div>
+
+<div *ngIf="collapsed" style="cursor: pointer; position: fixed; bottom: 10px; right: 10px;" (click)="collapsed = false">
+    <img src="/assets/chat-svgrepo-com.svg" width="30px" />
+</div>

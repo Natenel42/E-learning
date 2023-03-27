@@ -1,0 +1,19 @@
+<app-student-header></app-student-header>
+
+<div class="container mt-5">
+    <div class="form-outline mb-4 col-6">
+        <label class="form-label" for="form2Example1">Select Course</label>
+        <select [(ngModel)]="selectedCourse" class="form-select" name="selectedCourse" (ngModelChange)="onCourseChange($event)">
+            <option [value]="course" *ngFor="let course of appService.Courses">{{course}}</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <a class="col-sm-12 col-md-5" [href]="'https://storage.googleapis.com/e-learn-project.appspot.com/' + material.path" *ngFor="let material of sharedCourseMaterials">
+            <div class="material" style="overflow: hidden;" >
+                <label style="font-size: 20px; overflow: hidden; cursor: pointer;">{{material.name}}</label>
+            </div>
+        </a>
+        
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<app-student-header></app-student-header>
+
+<div class="container mt-5" *ngIf="!currentExam">
+    <h2>Exams</h2>
+    <div class="container mt-5">
+        <div class="item mt-2" *ngFor="let exam of studentExams" (click)="takeExam(exam)">
+            <div style="font-size: medium; ">Exam Name : {{exam.examName}}</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5 mb-5" *ngIf="currentExam">
+    <div *ngFor="let question of currentExam?.exam?.questions; let i = index">
+        <fieldset>
+            <legend>{{i+1}}. {{question.question}}</legend>
+        
+            <div>
+              <input type="radio" [name]="i" value="huey"
+                     >
+              <label for="huey">{{question.A}}</label>
+            </div>
+        
+            <div>
+              <input type="radio"  [name]="i" value="dewey">
+              <label for="dewey">{{question.B}}</label>
+            </div>
+        
+            <div>
+              <input type="radio" [name]="i" value="louie">
+              <label for="louie">{{question.C}}</label>
+            </div>
+
+            <div>
+                <input type="radio" [name]="i" value="louie">
+                <label for="louie">{{question.D}}</label>
+              </div>
+        </fieldset>
+    </div>
+
+    <button class="btn btn-primary" (click)="submitExam()" color="primary"
+    style="margin-top: 30px; margin-bottom: 40px;" >Submit Exam</button>
+</div>

@@ -1,0 +1,37 @@
+<app-student-header></app-student-header>
+
+<div class="container mt-5">
+    <div *ngFor="let course of courses">
+
+    </div>
+
+    <table class="table table-striped" *ngIf="courses">
+        <thead>
+            <tr>
+                <th scope="col">Course</th>
+                <th scope="col">Quizs</th>
+                <th scope="col">Exams</th>
+                <th scope="col">Assignment</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="height: 100px;" *ngFor="let course of courses">
+                <th scope="row">{{course?.course}}</th>
+                <td>
+                    <p class="schedule">{{course?.quiz}}</p>
+                </td>
+                <td>
+                    <p class="schedule">{{course?.exam}}</p>
+                </td>
+                <td>
+                    <p class="schedule">{{course?.assignment}}</p>
+                </td>
+                <td>
+                    <p class="schedule">{{course?.quiz + course?.exam + course?.assignment}}</p>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>

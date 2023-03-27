@@ -1,0 +1,31 @@
+<app-lecturer-header></app-lecturer-header>
+
+<div class="container mt-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Email</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Quizs (20)</th>
+                <th scope="col">Exams (50)</th>
+                <th scope="col">Assignment (30)</th>
+                <th scope="col">Total (100)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of allStudents; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{student.emailAddress}} </td>
+                <td>{{student.firstName}} {{student.middleName}} {{student.lastName}}</td>
+                <td><input type="number" min="0" max="20" [(ngModel)]="student.courses[course].quiz" name="quiz" style="width: 80px;"/></td>
+                <td><input type="number" min="0" max="50" [(ngModel)]="student.courses[course].exam" name="exam" style="width: 80px;"/></td>
+                <td><input type="number" min="0" max="30" [(ngModel)]="student.courses[course].assignment" name="assignment" style="width: 80px;"/></td>
+                <td>{{student?.courses[course].quiz + student?.courses[course].exam + student?.courses[course].assignment}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-primary" (click)="saveAssessment()" color="primary"
+    style="float: right;margin-top: 40px;" [disabled]="busy">Save Assesment</button>
+</div>

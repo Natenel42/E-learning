@@ -1,0 +1,14 @@
+<app-student-header></app-student-header>
+
+<div class="container mt-5">
+    <h2>Announcements</h2>
+    <div class="container mt-5">
+        <div class="announcement mt-2" *ngFor="let announcement of studentAnnouncements">
+            <label style="font-size: small; float: left;">Posted on : {{announcement.announcedOn}}</label>
+            <label style="font-size: small; float: right;">Posted from: {{announcement.addressedFrom}}</label>
+            <br/>
+            <p style="font-size: small; ">Addressed To : {{announcement.addressedTo}}</p>
+            <p>{{announcement.message}}</p>
+        </div>
+    </div>
+</div>

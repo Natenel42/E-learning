@@ -1,0 +1,19 @@
+<app-lecturer-header></app-lecturer-header>
+
+<div class="container mt-5">
+    <form>
+        <h1 style="margin-bottom: 1rem;">Upload Material</h1>
+    
+        <div class="form-outline mb-4 col-6">
+            <select [(ngModel)]="selectedCourse" class="form-select" name="selectedCourse">
+                <option [value]="course" *ngFor="let course of appService.Courses">{{course}}</option>
+            </select>
+            <label class="form-label" for="form2Example1">Select Course</label>
+        </div>
+    
+        <input type="file" (change)="uploadFile($event)">
+    
+        <button class="btn btn-primary" (click)="uploadMaterial()" color="primary"
+            style="float: right;margin-top: 30px;" [disabled]="busy">Upload</button>
+    </form>
+</div>

@@ -1,0 +1,77 @@
+<app-header></app-header>
+
+<div class="container">
+    <div id="loginPane">
+        <!-- <img class="logoImgAuthForms" src="../../../../assets/Images/logo.png"/> -->
+
+        <form class="example-form">
+            <h1 style="margin-bottom: 2rem;">Register</h1>
+            <div class="row">
+                <div class="form-outline mb-4 col-4">
+                    <input type="email" id="form2Example1" class="form-control" name="firstName"
+                        [(ngModel)]="firstName" />
+                    <label class="form-label" for="form2Example1">First Name</label>
+                </div>
+
+                <div class="form-outline mb-4 col-4">
+                    <input type="email" id="form2Example1" class="form-control" name="middleName"
+                        [(ngModel)]="middleName" />
+                    <label class="form-label" for="form2Example1">Middle Name</label>
+                </div>
+
+                <div class="form-outline mb-4 col-4">
+                    <input type="email" id="form2Example1" class="form-control" name="lastName"
+                        [(ngModel)]="lastName" />
+                    <label class="form-label" for="form2Example1">Last Name</label>
+                </div>
+
+                <div class="form-outline mb-4 col-6">
+                    <input type="date" id="form2Example1" class="form-control" name="birthDate"
+                        [(ngModel)]="birthDate" />
+                    <label class="form-label" for="form2Example1">Birth Date</label>
+                </div>
+                <div class="form-outline mb-4 col-6">
+                    <input type="email" id="form2Example1" class="form-control" name="emailAddress"
+                        [(ngModel)]="emailAddress" />
+                    <label class="form-label" for="form2Example1">Email address</label>
+                </div>
+
+                <div class="form-outline mb-4 col-6">
+                    <label class="form-label" for="form2Example1">Select Program</label>
+                    <select [(ngModel)]="program" name="program" class="form-select">
+                        <option [value]="program" *ngFor="let program of appService.Programs">{{program}}</option>
+                    </select>
+                </div>
+
+                <div class="form-outline mb-4 col-6">
+                    <label class="form-label" for="form2Example1">Select Department</label>
+                    <select [(ngModel)]="department" name="department" class="form-select">
+                        <option [value]="dept.name" *ngFor="let dept of appService.Departments">{{dept.name}}</option>
+                    </select>
+                </div>
+
+
+                <div class="form-outline mb-4 col-6">
+                    <input type="password" id="form2Example1" class="form-control" name="password"
+                        [(ngModel)]="password" />
+                    <label class="form-label" for="form2Example1">Password</label>
+                </div>
+
+                <div class="form-outline mb-4 col-6">
+                    <input type="password" id="form2Example1" class="form-control" name="confirm_password"
+                        [(ngModel)]="confirm_password" />
+                    <label class="form-label" for="form2Example1">Confirm Password</label>
+                </div>
+            </div>
+
+
+            <button class="btn btn-primary" [disabled]="busy" (click)="registerUserwithEmailPassword()" color="primary"
+                style="float: right;margin-top: 30px;">Register</button>
+
+            <p style="margin-top: 6rem;">Already Have Account? <a [routerLink]="['/login']">Signin</a></p>
+        </form>
+    </div>
+
+
+
+</div>

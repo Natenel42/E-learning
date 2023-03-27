@@ -1,0 +1,47 @@
+#loginPane {
+    position: absolute;
+    top: 8%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    background-color: rgb(249, 249, 249);
+    padding: 30px 30px 5px 30px;
+
+    text-align: center;
+    min-width:18rem;
+    max-width: 23rem;
+    border: rgb(241, 241, 241) 1px solid;
+    border-radius: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgba(249, 249, 249) inset !important;
+    box-shadow: 0 0 0 30px rgba(249, 249, 249) inset !important;
+
+}
+
+.full-width{
+    width: 100%;
+}
+
+.logoImgAuthForms{
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.termsNote{
+    position: absolute;
+    bottom: 30px;
+
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
