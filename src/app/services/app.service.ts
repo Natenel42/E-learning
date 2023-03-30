@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-/*import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFireDatabase } from '@angular/fire/compat/database';*/
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable({
@@ -15,10 +15,10 @@ export class AppService {
 
   constructor(
     public router: Router,
-   /* public afAuth: AngularFireAuth,
+    public afAuth: AngularFireAuth,
     public db: AngularFireDatabase,
     private afs: AngularFirestore,
-    public auth: AngularFireAuth*/
+    public auth: AngularFireAuth
   ) {
     this.auth.authState.subscribe((auth: any) => {
       this.signedUser = auth;
